@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/wireframe-editmemes.css">
+		<meta charset="UTF-8">
+		<link href = "css/navbar.css" rel = "stylesheet" type = "text/css">
+		<link href = "css/wireframe-editmemes.css" rel = "stylesheet" type = "text/css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+        
+        <link rel="stylesheet" type="text/css" href="css/jquery.tagsinput.css" />
+         
+        
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tagsinput.js"></script>
+        <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+        
+        <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+        
+        
+        
+        <!-- for future use of star rating 
+        <script type='text/javascript' src='js/jquery.rating.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/jQuery.Rating.css" />
+        -->
+       
+        
+		<title>Edit Memes</title>
+
+		<!-- NOTTTTEEEEEEEEE !!!!!! I used this many javascript code even if this second homework assign specified on css for prototyping. I wanted to do a mock prototype where
+			 I can allow you t.as to experience some future upcoming feature that will be implemented in better j.s code. Overall, these webpages were stilled decorated using css. -->
+		<script>
+			
+			function expand(){
+				document.getElementById('tree_menu').innerHTML = '<li><img src="images/toggle_small.jpg" alt="toggle_small" class="toggle" onclick="withdraw()"><img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Alley Cat </b><ol><li class="image_file" onclick="display_confirmation()">'+
+				'<img src="images/blank1.jpg" alt="blank"> Grumpy_Cat.jpg (Working Example) &nbsp;</li><li class="image_file"><img src="images/blank2.jpg" alt="blank2"> Confused_Cat.jpg&nbsp;</li>'+
+				'<li class="image_file"><img src="images/blank3.jpg" alt="blank3"> Excited_Cat.jpg&nbsp;</li></ol></li><li><img src="images/expand.jpg" alt="expand" class="toggle">'+
+				'<img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Cool Cat</b></li><li><img src="images/expand.jpg" alt="expand" class="toggle">'+
+				'<img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Aristo Cat</b></li>';
+			}
+			
+			function withdraw(){
+				document.getElementById('tree_menu').innerHTML = '<li><img src="images/expand.jpg" alt="toggle_small" class="toggle" onclick="expand()"><img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Alley Cat </b></li><li><img src="images/expand.jpg" alt="expand" class="toggle">'+
+				'<img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Cool Cat</b></li><li><img src="images/expand.jpg" alt="expand" class="toggle">'+
+				'<img src="images/blue-folder-horizontal.jpg" alt="folder"><b>Aristo Cat</b></li>';
+			}
+			
+			function remove_description(){
+				if(document.getElementsByClassName('contents')[0].id == "hidden_for_upload"){
+					document.getElementById('edit_or_upload_container').innerHTML = '<div id="image_container"><div id="editable_top_pane" contenteditable="true">Enter Top Text Here</div><div id="editable_bot_pane" contenteditable ="true">Enter Bot Text Here</div>' +
+					'<img src="images/blank1.jpg" alt="random" id="edit_image"></div>'+
+					'<button type="button" id="savebutton"><img src="images/save_icon.gif" alt="save_image"> &nbsp;<b>SAVE </b> &nbsp;&nbsp; </button>';	
+					document.getElementById('visible').id = "hidden";
+				}
+				else{
+					document.getElementById('hidden_for_edit').id = "visible_for_upload";
+					document.getElementById('visible_for_edit').id ="hidden_for_upload";
+					document.getElementById('edit_or_upload_container').innerHTML =  '<div id="image_container"><div id="editable_top_pane" contenteditable="true">Enter Top Text Here</div><div id="editable_bot_pane" contenteditable ="true">Enter Bot Text Here</div>' +
+					'<img src="images/blank1.jpg" alt="random" id="edit_image"></div>'+
+					'<button type="button" id="savebutton"><img src="images/save_icon.gif" alt="save_image"> &nbsp;<b>SAVE </b> &nbsp;&nbsp; </button>';	
+					document.getElementById('visible').id = "hidden";
+				}
+			}
+			
+			function show_description(){
+				if(document.getElementsByClassName('no_contents')[0].id=="hidden_for_edit"){
+					document.getElementById('edit_or_upload_container').innerHTML =  '<div id="image_container"><div id="editable_top_pane" contenteditable="true">Enter Top Text Here</div><div id="editable_bot_pane" contenteditable ="true">Enter Bot Text Here</div>' +
+					'<img src="images/blank1.jpg" alt="random" id="edit_image"></div>'+
+					'<button type="button" id="savebutton"><img src="images/save_icon.gif" alt="save_image"> &nbsp;<b>SAVE </b> &nbsp;&nbsp; </button>';	
+					document.getElementById('visible').id = "hidden";
+				}
+				else{
+					document.getElementById('hidden_for_upload').id ="visible_for_edit";
+					document.getElementById('visible_for_upload').id="hidden_for_edit";
+					document.getElementById('edit_or_upload_container').innerHTML =  '<div id="image_container"><div id="editable_top_pane" contenteditable="true">Enter Top Text Here</div><div id="editable_bot_pane"contenteditable ="true">Enter Bot Text Here</div>' +
+					'<img src="images/blank1.jpg" alt="random" id="edit_image"></div>'+
+					'<button type="button" id="savebutton"><img src="images/save_icon.gif" alt="save_image"> &nbsp;<b>SAVE</b> &nbsp;&nbsp; </button>';	
+					document.getElementById('visible').id = "hidden";
+				}
+			}
+			
+			function display_confirmation(){
+				document.getElementById('hidden').id = "visible";
+			}
+			
+			function exit(){
+				document.getElementById('visible').id = "hidden";
+			}
+					
+		</script>
+		</head>
+
+		<body>
+<header>
+            <ul>
+        <li class="logo"><a href="home.html"><img class="logo" src="images/memebro.jpg" alt="logo"></a></li>
+        <li id="searchbar">
+                    <input type="search" placeholder="Search">
+                </li>
+        <li><a id="logoutbutton" href="landing.html">Logout</a> </li>
+        <li><a id="homebutton" href="home.html">Home</a> </li>
+    </ul>
+        </header>
+<div id="leftnavbar">
+            <div class="modalDialog" id="hidden">
+        <div id="confirmation">
+                    <div class="bubble">
+                <p id="creatememebutton" onclick ="remove_description()">MAKE NEW</p>
+                <p id="editmemebutton" onclick="show_description()">EDIT CURRENT</p>
+                <p id="exitbutton" onclick="exit()">EXIT</p>
+            </div>
+                </div>
+    </div>
+            <div id="tree_menu_container">
+        <ol id="tree_menu">
+                    <li> <img src="images/expand.jpg" alt="expand" class="toggle" onclick="expand()"> <img src="images/blue-folder-horizontal.jpg" alt="folder"><b> Alley Cat (Working Example)</b> </li>
+                    <li> <img src="images/expand.jpg" alt="expand" class="toggle"> <img src="images/blue-folder-horizontal.jpg" alt="folder"> <b> Cool Cat </b></li>
+                    <li> <img src="images/expand.jpg" alt="expand" class="toggle"> <img src="images/blue-folder-horizontal.jpg" alt="folder"> <b> Aristo Cat </b> </li>
+                </ol>
+    </div>
+        </div>
+<div id="edit_container">
+            <div id="edit_or_upload_container">
+        <div id="image_container"><div id="editable_top_pane" contenteditable="true">Enter Top Text Here</div><div id="editable_bot_pane" contenteditable ="true">Enter Bot Text Here</div>
+					<img src="images/blank1.jpg" alt="random" id="edit_image"></div>
+        <button type="button" id="savebutton"><img src="images/save_icon.gif" alt="save_image"> &nbsp;<b>SAVE </b> &nbsp;&nbsp; </button>
+    </div>
+            <div id="description_container">
+        <div id="visible_for_edit" class="contents">
+                    <ul class="image_description">
+                <li><b> Ratings: </b>&nbsp;<img src="images/0_star.png" alt="norating" class="star_images"></li>
+                
+                <script type="text/javascript">
+		
+		function onAddTag(tag) {
+			alert("Added a tag: " + tag);
+		}
+		function onRemoveTag(tag) {
+			alert("Removed a tag: " + tag);
+		}
+		
+		function onChangeTag(input,tag) {
+			alert("Changed a tag: " + tag);
+		}
+		
+		$(function() {
+
+			$('#tags_1').tagsInput({width:'auto'});
+			$('#tags_2').tagsInput({
+				width: 'auto',
+				onChange: function(elem, elem_tags)
+				{
+					var languages = ['php','ruby','javascript'];
+					$('.tag', elem_tags).each(function()
+					{
+						if($(this).text().search(new RegExp('\\b(' + languages.join('|') + ')\\b')) >= 0)
+							$(this).css('background-color', 'yellow');
+					});
+				}
+			});
+			$('#tags_3').tagsInput({
+				width: 'auto',
+
+				//autocomplete_url:'test/fake_plaintext_endpoint.html' //jquery.autocomplete (not jquery ui)
+				autocomplete_url:'test/fake_json_endpoint.html' // jquery ui autocomplete requires a json endpoint
+			});
+			
+
+// Uncomment this line to see the callback functions in action
+//			$('input.tags').tagsInput({onAddTag:onAddTag,onRemoveTag:onRemoveTag,onChange: onChangeTag});		
+
+// Uncomment this line to see an input with no interface for adding new tags.
+//			$('input.tags').tagsInput({interactive:false});
+		});
+	
+	</script>
+                
+             
+                <li><b> Tags: </b>
+                            <form>
+                        <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" />
+                    		</form></li>
+                   
+                    
+                    
+                    <li><b>URL: </b><a href="#">http://coolsite.com/Grumpy_Cat.jpg</a>
+                    <li>
+            <li><b> Date/Time Fetched: </b> &nbsp; Fri Jul 18 2014 14:10:38 </li>
+                    <li><b> Comments Made: </b> &nbsp;
+                <div class="commentbox">
+                            <p> <a href="home.html">Me </a>:&nbsp; This is so funny!!! LOL!! LMAO!!! </p>
+                            <hr>
+                            <p><a href="#"> Other Use</a>: &nbsp; I agree!!! </p>
+                            <hr>
+                            <p><a href="home.html"> Me </a> &nbsp; I can't stop laughing </p>
+                            <hr>
+                        </div>
+            </li>
+                    </ul>
+                </div>
+        <div id="hidden_for_edit" class="no_contents">
+                    <ul class="image_description">
+                <li><b> Ratings: </b>&nbsp;<img src="images/0_star.png" alt="norating" class="star_images"></li>
+                <li><b> Tags: </b>
+                            <form>
+                        <input id="tags_2" type="text" class="tags" value="n/a" />
+                    		</form></li>
+                <li><b> URL:</b> None </li>
+                <li><b> Date/Time Fetched: </b> &nbsp; (it will display the time of upload)</li>
+                <li><b> Comments Made: </b> &nbsp;
+                            <div class="commentbox">No comments for this meme yet.</div>
+                        </li>
+            </ul>
+                </div>
+    </div>
+        </div>
+</body>
+</html>

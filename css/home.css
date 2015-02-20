@@ -1,0 +1,500 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+
+html, body {
+	width: 100%;
+	margin: 0% 0% 0% 0%;
+	height: 100%;
+}
+
+#leftnavbar {
+	width: 25% !important;
+	height: 86%;
+	min-width: 300px !important;
+	float: left;
+	display: inline;
+	margin-top: 6%;
+	position: fixed;
+	margin-top: 70px;
+	margin-left: 20px;
+	z-index: 1;
+	border-right: 2px solid black;
+}
+
+#tree_menu_container {
+	width: 90%;
+	height: 90%;
+	border: 1px solid black;
+	overflow-y: auto;
+	margin-top:1.5%;
+}
+
+.image_file:hover{
+	cursor:pointer;
+	background-color:#6699FF;
+}
+
+ol {
+	list-style-type: none;
+	margin-left: -10%;
+}
+
+.toggle {
+	margin-top:1.3%;
+	cursor: pointer;
+	margin-bottom:-.7%;
+}
+
+.image_file img {
+	height: 20px;
+	width: 20px;
+	margin-left: 10%;
+}
+
+.modalDialog {
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	opacity: 1;
+	color: white;
+}
+
+#modalDialog1{
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 500px;
+	height: 380px;
+	margin-left: -6%;
+	margin-top: 4%;
+	background: rgba(0,0,0,0.5);
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	opacity: 1;
+	color: white;
+	border: 2px solid white;
+}
+
+#back {
+	margin-top:3%;
+	margin-bottom:-3%;
+	margin-left: 5%;
+	background: rgba(255,255,255,0.9);
+	border: 2px solid white;
+	cursor:pointer;
+	float:right;
+	margin-right: 4.2%;
+}
+
+#foldername{
+	margin-top:3%;
+	margin-bottom:-3%;
+	position:absolute;
+}
+
+#save_folder_container{
+	width: 450px;
+	height: 250px;
+	background: rgba(255,255,255,0.9);
+	opacity: 0;
+	margin-top: 4%;
+	margin-left: 5%;
+	border: 2px solid white;
+	opacity: 1;
+	float:left;
+	overflow-y:auto;
+}
+
+#save_folder_container div{
+	width:60px;
+	height:92px;
+	float:left;
+	margin-top:5%;
+	margin-left: 9%;
+	color:black;
+	cursor:pointer;
+	font-size:10pt;
+}
+
+#save_folder_container div:hover{
+	background-color: #6699CC;
+	opacity:0.8;
+}
+
+#save_folder_container img{
+	width:60px; 
+	height:60px;
+	opacity: 0.8;
+}
+
+#modalDialog1  b{
+	margin-left: 5%;
+}
+
+#save_file{
+	border-radius: 0;
+	height: 4px;
+	width: 269px;
+	background: rgba(255,255,255,0.9);
+	margin-left:3%;
+	margin-top: 3%;
+	background-image:none !important;
+	border: 2px solid white;
+}
+
+#fileName{
+	border-radius: 5px;
+	height: 15px;
+	width: 250px;
+	font-size:14pt;
+	background: rgba(255,255,255,0.9);
+	margin-bottom:3%;
+	background-image:none !important;
+	border: 2px solid white;
+}
+
+#create_save_file{
+	border-radius: 0;
+	height: 4px;
+	width: 200px;
+	background: rgba(255,255,255,0.9);
+	margin-left:3%;
+	margin-top: 3%;
+	background-image:none !important;
+	border: 2px solid white;
+}
+
+#create_file_button, #cancel_save, #back button{
+	background: rgba(255,255,255,0.9);
+	border: 2px solid white;
+	cursor:pointer;
+}
+
+#confirmation{
+	width: 90%;
+}
+
+#fileConfirmation {
+	margin-top: 15%;
+	margin-left: 3%;
+}
+
+#fileConfirmation > p{
+	font-size:14pt;
+}
+
+#fileConfirmation > input{
+	width: 230px;
+	border:1px solid black;
+}
+
+.bubble {
+	margin-top: 60px !important;
+	margin-bottom: auto !important;
+	margin-left: auto;
+	margin-right: auto;
+	width: 175px;
+	height: 145px;
+	padding: 0px;
+	background: #FFFFFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: #000000 solid 3px;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 0px 15px 0;
+	border-color: transparent #FFFFFF;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -0px;
+	top: 72px;
+}
+
+.bubble:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 17px 2px 17px 0;
+	border-color: transparent #000000;
+	display: block;
+	width: 0;
+	z-index: 0;
+	left: -5px;
+	top: 70px;
+}
+
+
+#creatememebutton,#editmemebutton ,#exitbutton{
+	color: black !important;
+	font-weight: bold !important;
+	font-size: small !important;
+	letter-spacing: 1px !important;
+	text-align: center !important;
+	margin-top: 5px !important;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle !important;
+	border: 3px solid black !important;
+	padding: 6px 6px 6px 6px;
+	width: 130px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+#cancelbutton{
+	color: white !important;
+	font-weight: bold !important;
+	font-size: small !important;
+	letter-spacing: 1px !important;
+	text-align: center !important;
+	margin-top: 5px !important;
+	margin-left: 0;
+	margin-right: auto;
+	vertical-align: middle !important;
+	border: 3px solid white !important;
+	padding: 6px 6px 6px 6px;
+	width: 130px;
+	border-radius: 20px;
+	cursor: pointer;
+
+}
+
+p#creatememebutton:hover,#editmemebutton:hover ,#exitbutton:hover  {
+	color: black !important;
+	background: #428bca;
+	cursor: pointer;
+}
+
+#hidden, #hidden_speech, #hidden_file{
+	display:none;
+}
+
+#visible, #visible_speech, #visible_file{
+	display:initial;
+}
+
+#body {
+	width: 75% !important;
+	float: right;
+	padding: 0;
+	display: inline;
+	margin-top: 6%;
+	height: 85%;
+	margin-left: 10%;
+}
+
+#dropdown{
+	float:right; 
+	margin-right: 3%; 
+	margin-left:-1%; 
+	border:1px solid black;
+}
+
+#memes_container_grid, #memes_container_list {
+	width: 95%;
+	height: 90%;
+	overflow-y: scroll;
+	margin-left: 3%;
+	margin-top: .5%;
+	border-bottom: 2px solid black;
+	border-top:2px solid black;
+}
+
+#title{
+	font-size:16pt;
+	margin-left: 3%;
+}
+
+#meme_list {
+	list-style-type: none;
+	font-size: 14pt;
+}
+
+#meme_list > li > b{
+	margin-left:5%;
+}
+
+.list_image {
+	width: 70px;
+	height: 70px;
+	margin-left: 6%;
+	margin-right: 2%;
+	margin-top:1%;
+}
+
+#list_image1{
+	width: 70px;
+	height: 70px;
+	margin-left: 6%;
+	margin-right: 2%;
+	margin-top:-1.3%;
+}
+
+.rating_list_img{
+	width: 35px;
+	height: 35px;
+	cursor:pointer;
+}
+
+.edit {
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	border: 1px solid black;
+	margin-right: 4%;
+}
+
+.create{
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	border: 1px solid black;
+	margin-right: 4%;
+	margin-left:-3%;
+}
+
+.trash{
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	border: 1px solid black;
+	margin-right: 25%;
+	margin-left:-3%;
+
+}
+
+.visible {
+	display: inherit;
+}
+
+.hidden {
+	display: none;
+}
+
+.img {
+	height: 270px;
+	width: 270px;
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-left: 3%;
+	margin-top: 1%;
+	
+}
+
+.img> img {
+	height: 270px;
+	width: 270px;
+	border: 1px solid black;
+	position: absolute;
+}
+.slide_down{
+	width: 270px;
+	height: 100px;
+	opacity: 0;
+	position: absolute;
+}
+
+.slide_down img{
+	width:35px;
+	height:35px;
+	cursor: pointer;
+	margin-bottom: -3%;
+}
+
+.img:hover .slide_down{
+	position: absolute;
+	width: 270px;
+	height: 35px;
+	opacity: .8;
+	background-color: white;
+}
+
+.slide_up {
+	width: 270px;
+	height: 100px;
+	opacity: 0;
+	position: absolute;
+	bottom:0;
+}
+
+.slide_up button {
+	width: 90px;
+	height: 35px;
+	border: 1px solid black;
+	cursor:pointer;
+	font-size:14pt;
+}
+
+.img:hover .slide_up {
+	position: absolute;
+	opacity: 1;
+	width: 270px;
+	height: 35px;
+	opacity: .8;
+	background-color: white;
+}
+
+.info_icon,.trashcan_icon{
+	width:25px;
+	height:25px;
+	float:right;
+	cursor:pointer;
+	margin-top:2%;
+	margin-right:2%;
+}
+
+.speech_bubble{
+	width:260px;
+	position:absolute;
+	margin-top:64%;
+	height:50px;
+	opacity:0;
+	padding:5px 5px 5px 5px;
+}
+
+.img:hover .speech_bubble {
+	position: absolute;
+	opacity: 1;
+	width: 260px;
+	height: 50px;
+	opacity: .8;
+	background-color: white;
+	border-radius:20px;
+}
+
+#overlay {
+	text-align: center;
+	vertical-align: bottom;
+	width: 300px;
+	height: 300px;
+	background: rgba(0,0,0,.50);
+	opacity: 0;
+	-webkit-transition: opacity .01s ease;
+	-moz-transition: opacity .01s ease;
+}
+
+img#blank1:hover #overlay {
+	opacity: 1;
+}

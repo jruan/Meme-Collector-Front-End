@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+input[type="search"] {
+	background-image: url(../images/mag.png);
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	border: 3px solid black !important;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif !important;
+	color: #000000;
+	width: 100px;
+	height:19px !important;
+	border: 1px solid black;
+	padding: 0 0 0 22px !important;
+	border-radius: 24px;
+	margin-left: 10px;
+	margin-top: 14px;
+	margin-bottom: auto !important;
+	padding-top: 0 !important;
+}
+input[type="search"]:focus {
+	color: #000000;
+	width: 200px;
+	outline: none;
+}
+input[type="search"] {
+	-webkit-transition: all 0.7s ease 0s !important;
+	-moz-transition: all 0.7s ease 0s !important;
+	-o-transition: all 0.7s ease 0s !important;
+	transition: all 0.7s ease 0s !important;
+}
+
+li.logo {
+	float: left;
+}
+li#searchbar {
+	float: left;
+	margin-bottom:9px;
+	margin-top:-21px;
+}
+header {
+	height: 36px !important;
+	margin: inherit;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	background-color: #000000;
+}
+header ul {
+	list-style-type: none;
+}
+
+a#forgotbutton{
+	float: right !important;
+	color: white !important;
+	font: 14px "Helvetica Neue" !important;
+	font-weight: bold !important;
+	letter-spacing: 1px !important;
+	margin-right: 5px !important;
+	margin-top: 5px !important;
+	text-decoration: none !important;
+}
+
+a#forgotbutton:hover{
+	text-decoration: none !important;
+	color: #428bca !important;
+}
+
+li#registerbutton,
+li#loginbutton,
+a#logoutbutton,
+a#createbutton,
+a#homebutton {
+	float: right !important;
+	color: white !important;
+	font: 18px "Helvetica Neue" !important;
+	font-weight: bold !important;
+	letter-spacing: 1px !important;
+	margin-right: 20px !important;
+	margin-top: -7px !important;
+	text-decoration: none !important;
+}
+
+a#forgotbutton:hover,
+li#registerbutton:hover,
+li#loginbutton:hover,
+a#logoutbutton:hover,
+a#homebutton:hover {
+	text-decoration: none !important;
+	color: #428bca !important;
+}
+
+a#register-trigger,
+a#login-trigger{
+float: right !important;
+	color: white !important;
+	font: 18px "Helvetica Neue" !important;
+	font-weight: bold !important;
+	letter-spacing: 1px !important;
+	margin-right: 20px !important;
+	text-decoration: none !important;
+}
+
+a#register-trigger:hover,
+a#login-trigger:hover{
+	text-decoration: none !important;
+	color: #428bca !important;
+}
+
+
+img.logo{
+	margin-top: -9px;
+	margin-bottom: 2px;
+}
+
+
+#login-content{
+	background-color: #000;
+	width: 300px;
+	position: fixed;
+	margin-top: 27px;
+    right: 115px;
+    display:none;
+    z-index:29;
+	font-size:medium;
+	font: bold 18px Arial, Helvetica, Sans-serif !important;
+	border-radius: 5px;
+}
+
+
+#register-content{
+	background-color: #000;
+	position: fixed;
+	margin-top: 27px;
+	width: 300px;
+    right: 0 !important;
+    display:none;
+    z-index:29;
+	font-size:medium;
+	font: bold 18px Arial, Helvetica, Sans-serif !important;
+	border-radius: 5px;
+}
+
+input{
+	padding: 6px 6px 6px 35px;
+	width: 300px;
+	color: #000 !important;
+	border-radius: 20px;
+	background-image: url(../images/mag.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding: 6px 6px 6px 35px;
+	width: 250px;
+
+}
+
+input#username{
+	background-image: url(../images/email.png) !important;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	border: 3px solid black !important;
+
+}
+
+input#password{
+	background-image: url(../images/password.png) !important;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	border: 3px solid black !important;
+	float: left;
+	width:150px;
+	vertical-align: bottom !important;
+
+}
+
+#loginsubmit{
+background-image: none !important;
+text-align: center !important;
+float:left !important;
+vertical-align: bottom !important;
+width: 100px !important;
+padding: 6px 6px 6px 6px !important;
+background-color: #FFF;
+border: 3px solid black !important;
+}
+
+#loginsubmit:hover{
+background-color: #428bca;
+
+}
+
+
+span#logintriangle{
+	font-size:small;
+	vertical-align:middle;
+}
+
+span#registertriangle{
+	font-size:small;
+	vertical-align:middle;
+}
+
+
+input#registersubmit{
+	background-image: none !important;
+	text-align: center !important;
+	vertical-align: bottom !important;
+	width: 100px !important;
+	padding: 6px 6px 6px 6px !important;
+	background-color: #FFF;
+	border: 3px solid black !important;
+	margin-right: 75px;
+	margin-left:34%;
+	
+}
+
+input#registersubmit:hover{
+	background-color: #428bca;
+	
+	
+}
+
+input#registerconfirmpassword{
+	background-image: url(../images/password.png) !important;
+}
+
+input#registerpassword{
+	background-image: url(../images/password.png) !important;
+}
+
+input#registerusername{
+	background-image: url(../images/email.png) !important;
+}
+
+input#registername{
+	background-image: url(../images/person.png) !important;
+}
+
+#overrideBootstrapNavbar{
+	width:100%;
+	margin-left:-.3%;
+	margin-top:-.3%;
+}

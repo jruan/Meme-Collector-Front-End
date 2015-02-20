@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name = "viewport" content = "height = device-height, width = device-width, initial-scale = 1.0">
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="favicon.ico">
+<link href = "css/landing.css" rel = "stylesheet" type = "text/css">
+<link href = "css/navbar.css" rel = "stylesheet" type = "text/css">
+
+<title>MemeBro</title>
+</head>
+
+<body>
+<div id="overrideBootstrapNavbar">
+<header>
+    <ul>
+        <li class="logo"><a href="landing.html"><img class="logo" src="images/memebro.jpg" alt="logo"></a></li>
+        <li id="searchbar">
+            <input type="search" placeholder="Search">
+        </li>
+        <li id="registerbutton"><a id="register-trigger" href="#">&nbsp;Register&nbsp;</a>
+            <div id="register-content">
+                <div id="registerinputs">
+                    <input id="registerusername" type="email" name="Email" placeholder="email" required>
+                    <br>
+                    <input id="registerpassword" type="password" name="Password" placeholder="password" required>
+                    <input id="registerconfirmpassword" type="password" name="ConfirmPassword" placeholder="confirm password" required>
+                    <input type="submit" id="registersubmit" value="Register" onClick="location.href='home.html'"> 
+                </div>
+            </div>
+        </li>
+        <li id="loginbutton"><a id="login-trigger" href="#">&nbsp;Login&nbsp;</a>
+            <div id="login-content">
+                <div id="logininputs">
+                    <input id="username" type="email" name="Email" placeholder="email" required>
+                    <br>
+                    <input id="password" type="password" name="Password" placeholder="password" required>
+                    <input type="submit" id="loginsubmit" value="Login" onClick="location.href='home.html'"> <a href="#" id="forgotbutton">Forgot Password?</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</header>
+</div>
+<div id="body">
+<!--
+<img id="largelogo" src="images/largelogo.png">
+-->
+
+
+<h1 id="trendingmemes">Trending Memes</h1>
+    <div class="slideshow">
+        <div class="images"> </div>
+    </div>
+    <div id="imagecontainer">
+        <div class="photobanner"> <img class="first" src="images/popular1.jpg" alt="cool meme"> <img src="images/popular2.jpg" alt="cool meme"> <img src="images/popular3.jpg" alt="cool meme"> <img src="images/popular4.jpg" alt="cool meme"> <img src="images/popular5.jpg" alt="cool meme"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script> 
+<script  type="text/javascript" src="js/jquery-firstpage.js"></script> 
+<!--<script  type="text/javascript" src="js/carousel2.js"></script> 
+<script  type="text/javascript" src="js/bloodhound.js"></script> 
+<script  type="text/javascript" src="js/typeahead.jquery.js"></script> 
+<script  type="text/javascript" src="js/typeahead-bundle.js"></script> 
+<script  type="text/javascript" src="js/typeahead.bundle.min.js"></script> 
+<script  type="text/javascript" src="js/multiple-datasets.js"></script>-->
+</body>
+</html>

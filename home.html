@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<meta charset="UTF-8">
+		<title>Home Page</title>
+		<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+		<script type="text/javascript" src="js/jscript-home.js"></script>
+		<script>
+			var array = new Array();
+			/*function redirect(){
+				window.location.href = "loaded_canvas.html";
+			}*/
+			
+			function change_grid(){
+				document.getElementById('memes_container_grid').className = "visible";
+				document.getElementById('memes_container_list').className = "hidden";
+			}
+			
+			function change_list(){
+				document.getElementById('memes_container_grid').className = "hidden";
+				document.getElementById('memes_container_list').className = "visible";
+			}
+			
+			function display_confirmation(){
+				document.getElementById('hidden').id = "visible";
+			}
+			
+			function exit(){
+				document.getElementById('visible').id = "hidden";
+			}
+			
+			
+			
+		</script>
+		</head>
+
+		<body onload ="setUp()">
+            <header>
+				<ul>
+                    <li class="logo"><a href="home.html"><img class="logo" src="images/memebro.jpg" alt="logo"></a></li>
+                    <li id="searchbar">
+						<input type="search" placeholder="Search" id="search" onkeypress = "search(event)">
+					</li>
+                    <li><a id="logoutbutton" href="landing.html">Logout</a> </li>
+                </ul>
+			</header>
+			
+			<div id="leftnavbar">
+			
+				<div class="modalDialog" id="hidden">
+					<div id="confirmation">
+						<div class="bubble">
+							<p id="creatememebutton" onclick ="window.location.href='canvas.html';">MAKE NEW</p>
+							<p id="editmemebutton" onclick="window.location.href='loaded_canvas.html';">EDIT CURRENT</p>
+							<p id="exitbutton" onclick="exit()">EXIT</p>
+						</div>
+					</div>
+				</div>	
+				
+				<div class="modalDialog" id="hidden_file">
+					<div id="fileConfirmation">
+						<p> Enter the name of your new file?</p> 
+						<input type="text" onkeypress = "addFolder(event)" id="fileName">
+						<p id="cancelbutton" onclick="cancel()">CANCEL</p>
+					</div>
+				</div>	
+				
+				<button type="button" onclick ="change_grid()"><img src="images/gridlayout_icon.jpg" alt="grid" title="Grid View" style ="width:20px;hieght:20px;"></button>
+				
+				<button type="button" onclick="change_list()"><img src="images/listlayout_icon.jpg" alt="list" title="List View" style="width:20px;hieght:20px;"></button>
+				
+				<button type="button" onclick = "getUsersFileName()"><img src="images/addfolder.jpg" alt="folder" title="Create Folder" style="width:20px;hieght:20px;"></button>
+				
+				<div id="tree_menu_container">
+					<ol id="tree_menu">
+						<!--<li> <img src="images/expand.jpg" alt="expand" class="toggle" onclick="expand()"> <img src="images/blue-folder-horizontal.jpg" alt="folder" onclick="expand()" class="toggle"> <b> Alley Cat </b> </li>
+						<li> <img src="images/expand.jpg" alt="expand" class="toggle"> <img src="images/blue-folder-horizontal.jpg" alt="folder" class="toggle"> <b> Cool Cat </b> </li>
+						<li> <img src="images/expand.jpg" alt="expand" class="toggle"> <img src="images/blue-folder-horizontal.jpg" alt="folder" class="toggle"> <b> Aristo Cat </b> </li>-->
+					</ol>
+				</div>
+			</div>
+
+			<div id="body">
+				<b id= "title"> Trending Memes </b>
+				<span id="dropdown_container"> 
+					<select id="dropdown">
+						<option> Select </option>
+						<option> Low to High Rating </option>
+						<option> High to Low Rating </option>
+					</select>
+					<b style="font-size:14pt;float:right;"> Sort By: &emsp; </b>
+				</span>
+				
+				<div id="modalDialog1" style="display:none;">
+						<div id="back_container">
+							<b id = "foldername" style="display:none;"></b> <button id="back" type="button" style="display:none;" onclick="display_all_saved_files()" ><b> Back </b> </button>
+						</div>
+						<div id="save_folder_container" ></div>
+						<div id="enter_image_name" style="float:left">
+							<b> Name: </b><input id="save_file" type="text" placeholder = "Enter Meme Name"> </input>
+							<button type="button" id="cancel_save" onclick="show_save('no', 'no', 'no', 'no')"> <b> Cancel</b></button>
+							<span id= "new_file_container" style="visibility:visible;"><b> New File Name: </b><input id="create_save_file" type="text" placeholder = "Enter New File Name"  onkeypress="create_folder(event)"> </input>
+							<button type="button" id = "create_file_button" onclick ="create_folder('mouse')"><b>Create</b></button></span>
+						</div>
+				</div>
+				
+				<div id="memes_container_grid" class="visible">
+					
+					<!--<div class="img">
+						<img src="images/blank1.jpg" class="hover" alt="cat1">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"> <b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon" onclick="handle_speech()">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+						<div class="speech_bubble" id="hidden_speech"><b> Url: http://www.url.com<br>Date/Time Fetch: Fri Jul 5, 2014 10:30:35</b></div>
+					</div>
+					
+					<div class="img">
+						<img src="images/blank2.jpg" class="hover" alt="cat2">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"><b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+					</div>
+					
+					<div class="img">
+						<img src="images/blank3.jpg" class="hover" alt="cat3">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"> <b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+					</div>
+					
+					<div class="img">
+						<img src="images/blank4.jpg" class="hover" alt="cat4">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"> <b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+					</div>
+        
+					<div class="img">
+						<img src="images/blank5.jpg" class="hover" alt="cat5">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"> <b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+					</div>
+					
+					<div class="img">
+						<img src="images/blank6.jpg" class="hover" alt="cat6">
+						<div class="slide_up">
+							<button type="button" onclick="redirect()"> <b>Edit</b></button>
+							<button type="button" onclick="redirect()"><b>Create</b></button>
+							<img src="images/info_icon.png" alt="info" class="info_icon">
+							<img src="images/trashcan_icon.jpg" alt="info" class="trashcan_icon">
+						</div>
+						<div class="slide_down"><img src="images/star_rating.png" alt="rating"></div>
+					</div-->
+			</div>
+            
+			<div id="memes_container_list" class="hidden">
+				<ol id="meme_list">
+                  <!--  <li><img src="images/blank1.jpg" id="list_image1" alt="cat1" title="Mad Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:34:50</li>
+					
+                    <li><img src="images/blank2.jpg" class="list_image" alt="cat2" title="Confused Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:35:40</li>
+					
+                    <li><img src="images/blank3.jpg" class="list_image" alt="cat3" title="Hyper Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:37:55</li>
+					
+                    <li><img src="images/blank4.jpg" class="list_image" alt="cat4" title="Smart Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:39:10</li>
+					
+                    <li><img src="images/blank5.jpg" class="list_image" alt="cat5" title="Big Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:42:20</li>
+					
+                    <li><img src="images/blank6.jpg" class="list_image" alt="cat6" title="Scary Cat"><img src="images/edit_icon.jpg" alt="edit" title="Edit" class="edit" onclick="redirect()"><img src="images/upload_icon.png" alt="create" title ="Create" class="create" onclick="redirect()"><img src="images/trashcan_icon.jpg" alt="trashcan" title="Trash" class="trash"><img src="images/star_rating.png" alt="rating" class="rating_list_img">Fri Jul 5, 2014 10:33:00</li>-->
+                </ol>
+			</div>
+        </div>
+	</body>
+</html>
